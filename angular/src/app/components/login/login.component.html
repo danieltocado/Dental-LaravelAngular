@@ -1,0 +1,28 @@
+<mdb-card>
+  <mdb-card-body>
+    <!-- Material form register -->
+    <form id="form_register"  class="loginForm" #loginForm="ngForm" (submit)="login(loginForm)">
+      <p class="h4 text-center py-4">Sign in</p>
+
+      <!-- Material input email -->
+      <div class="md-form">
+        <mdb-icon fas icon="exclamation-triangle" class="prefix grey-text"></mdb-icon>
+        <input name="email" ngModel type="email" id="materialFormCardEmailEx" class="form-control" mdbInput>
+        <label for="materialFormCardEmailEx" class="font-weight-light">Your email</label>
+      </div>
+
+      <!-- Material input password -->
+      <div class="md-form">
+        <mdb-icon icon="lock" class="prefix grey-text"></mdb-icon>
+        <input name="password" ngModel type="password" id="materialFormCardPasswordEx" class="form-control"
+          mdbInput>
+        <label for="materialFormCardPasswordEx" class="font-weight-light">Your password</label>
+      </div>
+
+      <div class="text-center py-4 mt-3">
+        <button mdbBtn color="cyan" class="waves-light" type="submit" mdbWavesEffect>Login</button>
+      </div>
+    </form>
+    <!-- Material form register -->
+  </mdb-card-body>
+</mdb-card>
