@@ -21,7 +21,12 @@ import { CardCitaComponent } from './components/card-cita/card-cita.component'
 import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from '@fullcalendar/interaction';
-import { CalendarComponent } from './components/calendar/calendar.component'; // a plugin
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { TratamientoOrtodonciaComponent } from './components/tratamiento-ortodoncia/tratamiento-ortodoncia.component';
+import { TratamientoEsteticadentalComponent } from './components/tratamiento-esteticadental/tratamiento-esteticadental.component';
+import { TratamientoMedicinabucalComponent } from './components/tratamiento-medicinabucal/tratamiento-medicinabucal.component';
+import { TratamientoOdontopediatriaComponent } from './components/tratamiento-odontopediatria/tratamiento-odontopediatria.component';
+import { TratamientoOtrosComponent } from './components/tratamiento-otros/tratamiento-otros.component'; // a plugin
 
 
 
@@ -43,7 +48,12 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     RegisterComponent,
     LoginComponent,
     CardCitaComponent,
-    CalendarComponent
+    CalendarComponent,
+    TratamientoOrtodonciaComponent,
+    TratamientoEsteticadentalComponent,
+    TratamientoMedicinabucalComponent,
+    TratamientoOdontopediatriaComponent,
+    TratamientoOtrosComponent
   ],
   imports: [
     BrowserModule,
