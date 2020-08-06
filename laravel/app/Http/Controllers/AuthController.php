@@ -19,6 +19,7 @@ class AuthController extends Controller
         $validator = Validator::make($body, [
             'name' => 'string',
             'surname' => 'string',
+            'phone' => 'integer',
             'email' => 'required|string|unique:users',
             'birthdate' => 'string',
             'password' => 'required|string',
@@ -33,6 +34,7 @@ class AuthController extends Controller
         $user = new User([
             'name'     => $request->name,
             'surname'  => $request->surname,
+            'phone'  => $request->phone,
             'email'    => $request->email,
             'password' => bcrypt($request->password),
             'birthdate' => $request->birthdate,
