@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +27,8 @@ import { TratamientoOrtodonciaComponent } from './components/tratamiento-ortodon
 import { TratamientoEsteticadentalComponent } from './components/tratamiento-esteticadental/tratamiento-esteticadental.component';
 import { TratamientoMedicinabucalComponent } from './components/tratamiento-medicinabucal/tratamiento-medicinabucal.component';
 import { TratamientoOdontopediatriaComponent } from './components/tratamiento-odontopediatria/tratamiento-odontopediatria.component';
-import { TratamientoOtrosComponent } from './components/tratamiento-otros/tratamiento-otros.component'; // a plugin
+import { TratamientoOtrosComponent } from './components/tratamiento-otros/tratamiento-otros.component';
+import { AppointmentComponent } from './components/appointment/appointment.component'; // a plugin
 
 
 
@@ -53,7 +55,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     TratamientoEsteticadentalComponent,
     TratamientoMedicinabucalComponent,
     TratamientoOdontopediatriaComponent,
-    TratamientoOtrosComponent
+    TratamientoOtrosComponent,
+    AppointmentComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     NgbModule,
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
-
+    MatFormFieldModule,
     MatCardModule,
     FormsModule,
     ReactiveFormsModule,

@@ -5,6 +5,7 @@ import { User } from '../../models/user.model';
 import { HttpResponse } from '@angular/common/http';
 import { Login } from 'src/app/interfaces/login';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +18,7 @@ export class RegisterComponent {
   errorMsg: string;
 
 
-  constructor(public userService: UserService) {
+  constructor(public userService: UserService, private router:Router) {
 
    }
 
@@ -34,8 +35,8 @@ export class RegisterComponent {
         console.log(res);
       }, function (error) {
         console.log(error);
-      })
-      ;
+      });
+    this.router.navigate(['/login']);
   }
 
 
