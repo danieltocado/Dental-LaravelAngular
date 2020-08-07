@@ -4,82 +4,60 @@ namespace App\Http\Controllers;
 
 use App\Appointment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class AppointmentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function getAll()
     {
-        //
+        return Appointment::with('user')->get();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function myAppointments()
     {
-        //
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function create(Request $request)
     {
-        //
+        $body = $request->all();
+        $validator = Validator::make($body, [
+            'appointment_date' => 'required|string',
+            'appointment_type' => 'required|string'
+        ]);
+        if($validator->fails()) {
+            return response()->json([
+                'message' => 'There was a problem creating the appointment.',
+                'errors' => $validator->errors(),
+            ],400);
+        }
+        $body['user_id'] = Auth::id();
+        $appointment = Appointment::create($body);
+        return $appointment;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Appointment  $appointment
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Appointment $appointment)
+    public function update(Request $request, $id)
     {
-        //
+        $body = $request->all();
+        $validator = Validator::make($body, [
+            'date' => 'required|date',
+        ]);
+        if($validator->fails()) {
+            return response()->json([
+                'message' => 'There was a problem creating the appointment.',
+                'errors' => $validator->errors(),
+            ],400);
+        }
+        $appointment = Appointment::find($id);
+        $appointment->update($body);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Appointment  $appointment
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Appointment $appointment)
+    public function delete($id)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Appointment  $appointment
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Appointment $appointment)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Appointment  $appointment
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Appointment $appointment)
-    {
-        //
+        $appointment = Appointment::find($id);
+        $appointment->delete();
+        return response()->json(['message' => 'Appointment deleted', 'apointment'=>$appointment]);
     }
 }
+
