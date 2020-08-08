@@ -28,7 +28,9 @@ import { TratamientoEsteticadentalComponent } from './components/tratamiento-est
 import { TratamientoMedicinabucalComponent } from './components/tratamiento-medicinabucal/tratamiento-medicinabucal.component';
 import { TratamientoOdontopediatriaComponent } from './components/tratamiento-odontopediatria/tratamiento-odontopediatria.component';
 import { TratamientoOtrosComponent } from './components/tratamiento-otros/tratamiento-otros.component';
-import { AppointmentComponent } from './components/appointment/appointment.component'; // a plugin
+import { AppointmentComponent } from './components/appointment/appointment.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { AllAppointmentsComponent } from './components/all-appointments/all-appointments.component'; // a plugin
 
 
 
@@ -56,7 +58,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     TratamientoMedicinabucalComponent,
     TratamientoOdontopediatriaComponent,
     TratamientoOtrosComponent,
-    AppointmentComponent
+    AppointmentComponent,
+    ProfileComponent,
+    AllAppointmentsComponent
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,8 @@ import { TratamientoMedicinabucalComponent } from './components/tratamiento-medi
 import { TratamientoOdontopediatriaComponent } from './components/tratamiento-odontopediatria/tratamiento-odontopediatria.component';
 import { TratamientoOtrosComponent } from './components/tratamiento-otros/tratamiento-otros.component';
 import { AppointmentComponent } from './components/appointment/appointment.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { AllAppointmentsComponent } from './components/all-appointments/all-appointments.component';
 
 
 const routes: Routes = [
@@ -22,7 +24,9 @@ const routes: Routes = [
   {path:"tratamiento/medicina-bucal", component: TratamientoMedicinabucalComponent},
   {path:"tratamiento/odontopediatria", component: TratamientoOdontopediatriaComponent},
   {path:"tratamiento/otros", component: TratamientoOtrosComponent},
-  {path:"cita", component: AppointmentComponent}
+  {path:"citas/crear", component: AppointmentComponent},
+  {path:"profile", component: ProfileComponent},
+  {path:"citas/lista", component: AllAppointmentsComponent}
 ];
 
 @NgModule({
