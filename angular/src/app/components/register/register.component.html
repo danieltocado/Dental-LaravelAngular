@@ -2,40 +2,40 @@
   <mdb-card-body>
     <!-- Material form register -->
     <form id="form_register"  class="registerForm" #registerForm="ngForm" (submit)="register(registerForm)">
-      <p class="h4 text-center py-4">Sign up</p>
+      <p class="h4 text-center py-4">Registro de usuario</p>
 
       <!-- Material input text -->
       <div class="md-form">
         <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
         <input name="name" ngModel type="text" id="materialFormCardNameEx" class="form-control" mdbInput>
-        <label for="materialFormCardNameEx" class="font-weight-light">Your name</label>
+        <label for="materialFormCardNameEx" class="font-weight-light">Nombre</label>
       </div>
 
       <div class="md-form">
         <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
         <input name="surname" ngModel type="text" id="materialFormCardSurnameEx" class="form-control" mdbInput>
-        <label for="materialFormCardSurnameEx" class="font-weight-light">Your surname</label>
+        <label for="materialFormCardSurnameEx" class="font-weight-light">Apellidos</label>
       </div>
 
       <!-- Material input email -->
       <div class="md-form">
         <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
         <input name="email" ngModel type="email" id="materialFormCardEmailEx" class="form-control" mdbInput>
-        <label for="materialFormCardEmailEx" class="font-weight-light">Your email</label>
+        <label for="materialFormCardEmailEx" class="font-weight-light">Correo electrónico</label>
       </div>
 
       <!-- Material input phone -->
       <div class="md-form">
         <mdb-icon fas icon="phone-alt" class="prefix grey-text"></mdb-icon>
         <input name="phone" ngModel type="text" id="materialFormCardPhoneEx" class="form-control" mdbInput>
-        <label for="materialFormCardPhoneEx" class="font-weight-light">Your phone</label>
+        <label for="materialFormCardPhoneEx" class="font-weight-light">Número de teléfono</label>
       </div>
 
       <!-- Material input date -->
       <div class="md-form">
         <mdb-icon fas icon="calendar-alt" class="prefix grey-text"></mdb-icon>
         <input name="birthdate" ngModel type="date" id="materialFormCardBirthdateEx" class="form-control" mdbInput>
-        <label for="materialFormCardBirthdateEx" class="font-weight-light">Your birthdate</label>
+        <label for="materialFormCardBirthdateEx" class="font-weight-light">Fecha de nacimiento</label>
       </div>
 
       <!-- Material input password -->
@@ -43,11 +43,11 @@
         <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
         <input name="password" ngModel type="password" id="materialFormCardPasswordEx" class="form-control"
           mdbInput>
-        <label for="materialFormCardPasswordEx" class="font-weight-light">Your password</label>
+        <label for="materialFormCardPasswordEx" class="font-weight-light">Contraseña</label>
       </div>
 
       <div class="text-center py-4 mt-3">
-        <button mdbBtn color="cyan" class="waves-light" type="submit" mdbWavesEffect>Register</button>
+        <button mdbBtn color="cyan" class="waves-light" type="submit" mdbWavesEffect>Regístrate</button>
       </div>
     </form>
     <!-- Material form register -->

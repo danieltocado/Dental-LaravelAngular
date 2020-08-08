@@ -1,32 +1,36 @@
 <mdb-card>
   <mdb-card-body>
     <!-- Material form register -->
-    <form id="form_appointment"  class="loginForm" #loginForm="ngForm" >
+    <form id="form_appointment"  class="appointmentForm" #appointmentForm="ngForm" (submit)="create(appointmentForm)" >
       <p class="h4 text-center py-4">Pide tu cita</p>
 
-      <!-- Material input email -->
+      <!-- Material input date -->
       <div class="md-form">
-        <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
-        <input name="email" ngModel type="email" id="materialFormCardEmailEx" class="form-control" mdbInput>
-        <label for="materialFormCardEmailEx" class="font-weight-light">Fecha de tu cita</label>
+        <mdb-icon fas icon="calendar" class="prefix grey-text"></mdb-icon>
+
+
+
+        <input id="appointment_date" matInput name="appointment_date" ngModel class="font-weight-light" type="datetime-local" placeholder="start date">
+
       </div>
 
-      <!-- Material input password -->
+      <!-- Material input select -->
       <div class="md-form">
         <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
-        <input name="password" ngModel type="password" id="materialFormCardPasswordEx" class="form-control"
-          mdbInput>
-        <label for="materialFormCardPasswordEx" class="font-weight-light">Tipo de cita</label>
+
+        <select id="select-appointment" name="appointment_type" ngModel class="browser-default custom-select font-weight-light" placeholder="Selecciona el tipo de cita">
+
+          <option value="ortodoncia">Ortodoncia</option>
+          <option value="estetica_dental">Estética dental</option>
+          <option value="medicina_bucal">Medicina bucal</option>
+          <option value="odontopediatria">Odontopediatría</option>
+          <option value="otros">Otros tratamientos.</option>
+        </select>
       </div>
-      <label for="cars">Choose a car:</label>
-      <select class="browser-default custom-select">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
+
+
       <div class="text-center py-4 mt-3">
-        <button mdbBtn color="cyan" class="waves-light" type="submit" mdbWavesEffect>Login</button>
+        <button mdbBtn color="cyan" class="waves-light" type="submit" mdbWavesEffect>Pedir cita</button>
       </div>
     </form>
     <!-- Material form register -->

@@ -13,7 +13,7 @@
         <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="envelope"></mdb-icon> Contact<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a href="/cita" class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="calendar"></mdb-icon> Pide tu cita</a>
+        <a href="/citas/crear" class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="calendar"></mdb-icon> Pide tu cita</a>
       </li>
 
       <li class="nav-item dropdown" dropdown>
@@ -29,26 +29,27 @@
       </li>
 
       <!-- Dropdown -->
-      <div class="guestZone" *ngIf="!getUser()">
         <li class="nav-item dropdown" dropdown>
+          <div class="guestZone" *ngIf="!getUser()">
           <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-            <mdb-icon fas icon="user"></mdb-icon> Profile<span class="caret"></span></a>
+            <mdb-icon fas icon="user"></mdb-icon>Inicia sesión<span class="caret"></span></a>
           <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-            <a class="dropdown-item waves-light" mdbWavesEffect href="/register">Signup</a>
-            <a class="dropdown-item waves-light" mdbWavesEffect href="/login">Login</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect href="/register">Registro</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect href="/login">Entra</a>
           </div>
-        </li>
-      </div>
-      <div class="userZone" *ngIf="getUser() as user">
-        <li class="nav-item dropdown" dropdown>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown" dropdown>
+        <div class="userZone" *ngIf="getUser() as user">
           <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-            <mdb-icon fas icon="user"></mdb-icon> Profile<span class="caret"></span></a>
+            <mdb-icon fas icon="user"></mdb-icon>{{user.name || user.email}}<span class="caret"></span></a>
           <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-            <a class="dropdown-item waves-light" mdbWavesEffect href="/register">Signoooo</a>
-            <a class="dropdown-item waves-light" mdbWavesEffect href="/login">Logoooo</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect href="/profile">Tu perfil</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect (click)="logout()">Salir</a>
           </div>
-        </li>
-      </div>
+        </div>
+      </li>
 
     </ul>
     <!-- Links -->
@@ -57,3 +58,6 @@
 
 </mdb-navbar>
 <!--/.Navbar-->
+
+
+
