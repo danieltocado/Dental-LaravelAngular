@@ -18,7 +18,11 @@ export class AppointmentService {
 
   create(appointment: Appointment): Observable<Appointment> {
     console.log(appointment);
-    return this.HttpClient.post<Appointment>(this.API_URL + '/api/appointment/create', appointment);
+    return this.HttpClient.post<Appointment>(this.API_URL + '/api/appointment/create', appointment, {
+      headers: {
+        authorization: 'Bearer '+ localStorage.getItem('authToken')
+      }
+    });
   }
 
   setAppointment(appointment: Appointment):void {
@@ -30,7 +34,11 @@ export class AppointmentService {
   }
 
   getAppointments():Observable<any> {
-    return this.HttpClient.get(this.API_URL+'/api/appointment');
+    return this.HttpClient.get(this.API_URL+'/api/appointment', {
+      headers: {
+        authorization: 'Bearer '+ localStorage.getItem('authToken')
+      }
+    });
   }
 
   setAppointments(appointments:Appointment[]):void {
