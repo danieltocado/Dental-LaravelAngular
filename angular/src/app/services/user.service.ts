@@ -37,7 +37,7 @@ export class UserService {
   logout(): void {
     this.HttpClient.get(this.API_URL + '/api/auth/logout', {
       headers: {
-        authorization: localStorage.getItem('authToken')
+        authorization: 'Bearer '+ localStorage.getItem('authToken')
       }
     })
     .subscribe(console.log);
