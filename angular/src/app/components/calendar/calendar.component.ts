@@ -38,8 +38,8 @@ export class CalendarComponent implements OnInit{
     initialView: 'dayGridMonth',
     dateClick: this.handleDateClick.bind(this), // bind is important!
     events: [
-      { title: 'Cita con el doctor Bayarri', date: `${this.appointment.appointment_date}` },
-      { title: 'event 2', date: '2020-08-02' }
+      { title: 'Cita con el doctor Bayarri', date: `2020-08-05T13:55` },
+      { title: 'event 2', date: '2020-08-05T13:50' }
     ],
     weekends: false
   };

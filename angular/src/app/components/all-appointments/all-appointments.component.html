@@ -1,14 +1,33 @@
 <div class="container-fluid random-movies">
   <h1>Citas</h1>
   <div class="movies">
-      <div class="peliculas" *ngFor="let appointment of ShowAppointments">
+    <table class="table">
+      <thead class="black white-text">
+        <tr>
+
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellidos</th>
+          <th scope="col">Día</th>
+          <th scope="col">Tipo</th>
+        </tr>
+      </thead>
+      <div class="peliculas w-100" *ngFor="let appointment of ShowAppointments">
+      <tbody>
+        <tr>
+
+              <td>{{appointment.user.name}}</td>
+              <td>{{appointment.user.surname}}</td>
+              <td>{{appointment.appointment_date}}</td>
+              <td>{{appointment.appointment_type}}</td>
+            </tr>
+
+          </tbody>
+        </div>
+        </table>
           <ul>
               <li>
-                {{appointment.appointment_type}}
-                {{appointment.appointment_date}}
-                de {{appointment.user.name}}
+
               </li>
           </ul>
       </div>
   </div>
-</div>
