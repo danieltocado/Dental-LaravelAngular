@@ -31,8 +31,8 @@ Route::group(['prefix' => 'auth'], function ()
     });
 });
 
-// Route::prefix('appointment')->middleware('auth:api')->group(function ()
-Route::prefix('appointment')->group(function ()
+Route::prefix('appointment')->middleware('auth:api')->group(function ()
+//Route::prefix('appointment')->group(function ()
 {
 
     Route::get('', 'AppointmentController@getAll');
