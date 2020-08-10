@@ -1,8 +1,14 @@
 <mdb-card>
   <mdb-card-body>
     <!-- Material form register -->
-    <form id="form_appointment"  class="appointmentForm" #appointmentForm="ngForm" (submit)="create(appointmentForm)" >
-      <p class="h4 text-center py-4">Pide tu cita</p>
+    <form id="form_appointment" class="appointmentForm" #appointmentForm="ngForm" (submit)="create(appointmentForm)">
+      <!-- Section heading -->
+      <h2 class="h1-responsive font-weight-bold text-center my-5">Pide tu cita.</h2>
+      <!-- Section description -->
+      <p class="text-center w-responsive mx-auto mb-5 grey-text">Elige el día y la hora que deseas tener tu cita y
+        nosotros te llamaremos para confirmarla.
+
+      </p>
 
       <!-- Material input date -->
       <div class="md-form">
@@ -10,7 +16,8 @@
 
 
 
-        <input id="appointment_date" matInput name="appointment_date" ngModel class="font-weight-light" type="datetime-local" placeholder="start date">
+        <input id="appointment_date" matInput name="appointment_date" ngModel class="font-weight-light"
+          type="datetime-local" placeholder="start date">
 
       </div>
 
@@ -18,7 +25,8 @@
       <div class="md-form">
         <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
 
-        <select id="select-appointment" name="appointment_type" ngModel class="browser-default custom-select font-weight-light" placeholder="Selecciona el tipo de cita">
+        <select id="select-appointment" name="appointment_type" ngModel
+          class="browser-default custom-select font-weight-light" placeholder="Selecciona el tipo de cita">
 
           <option value="ortodoncia">Ortodoncia</option>
           <option value="estetica_dental">Estética dental</option>

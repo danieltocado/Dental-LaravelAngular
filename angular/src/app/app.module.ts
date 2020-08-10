@@ -31,6 +31,8 @@ import { TratamientoOtrosComponent } from './components/tratamiento-otros/tratam
 import { AppointmentComponent } from './components/appointment/appointment.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AllAppointmentsComponent } from './components/all-appointments/all-appointments.component'; // a plugin
+import { WavesModule, TableModule, InputsModule } from 'angular-bootstrap-md';
+import { ErrorComponent } from './components/error/error.component';
 
 
 
@@ -60,7 +62,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     TratamientoOtrosComponent,
     AppointmentComponent,
     ProfileComponent,
-    AllAppointmentsComponent
+    AllAppointmentsComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +76,10 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FullCalendarModule
+    FullCalendarModule,
+    WavesModule,
+    TableModule,
+    InputsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

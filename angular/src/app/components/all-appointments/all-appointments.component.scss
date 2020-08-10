@@ -1,0 +1,22 @@
+.tabla-citas {
+  width: 75%;
+}
+
+.container-citas {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.h1-citas {
+  margin-top: 20px;
+}
+
+.appointments-image {
+  background-image: url(../../../assets/img/appointments.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 30em;
+}
+

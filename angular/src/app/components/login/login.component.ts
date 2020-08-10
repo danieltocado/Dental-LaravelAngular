@@ -21,7 +21,7 @@ export class LoginComponent {
         localStorage.setItem('authToken', res.token);
         localStorage.setItem('user', JSON.stringify(res.user));
         this.userService.setUser(res.user);
-        this.router.navigate(['/']);
+        this.router.navigate(['/profile']);
       }, error => {
         console.log('error');
       });

@@ -12,6 +12,7 @@ import { TratamientoOtrosComponent } from './components/tratamiento-otros/tratam
 import { AppointmentComponent } from './components/appointment/appointment.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AllAppointmentsComponent } from './components/all-appointments/all-appointments.component';
+import { ErrorComponent } from './components/error/error.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path:"tratamiento/otros", component: TratamientoOtrosComponent},
   {path:"citas/crear", component: AppointmentComponent},
   {path:"profile", component: ProfileComponent},
-  {path:"citas/lista", component: AllAppointmentsComponent}
+  {path:"citas/lista", component: AllAppointmentsComponent},
+  {path:"**", component: ErrorComponent}
 ];
 
 @NgModule({
